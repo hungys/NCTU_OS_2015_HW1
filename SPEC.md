@@ -382,7 +382,7 @@ progA argA1 argA2 | progB argB1
 
 should fork both progA and progB and make the output from progA go to the input of progB. This should be accomplished using a pipe IPC primative.
 
-There is no limitation for the number of programs in a single pipeline.  *mysh* should be insensitive to repeated blank spaces, or even a program followed by a '|` token without any blank space. For example,
+There is no limitation for the number of programs in a single pipeline.  *mysh* should be insensitive to repeated blank spaces, or even a program followed by a `|` token without any blank space. For example,
 
 ```
 osta in /Users/osta/mysh
@@ -493,7 +493,7 @@ count to 5
 
 A zombie process is a process that has completed execution (via the exit system call) but still has an entry in the process table. This occurs for child processes, where the entry is still needed to allow the parent process to read its child's exit status: once the exit status is read via the `wait()` system call, the zombie's entry is removed from the process table and it is said to be "reaped". A child process always first becomes a zombie before being removed from the resource table. In most cases, under normal system operation zombies are immediately waited on by their parent and then reaped by the system – processes that stay zombies for a long time are generally an error and cause a resource leak.
 
-In this task, you are asked to to modify your program, or add some code to prevent zombie processes. A common way is to insert some code for reaping such processes at appropriate place. To verify your work, you can use `ps` command to check the snapshot of current processes.
+In this task, you are asked to modify your program, or add some code to prevent zombie processes. A common way is to insert some code for reaping such processes at appropriate place. To verify your work, you can use `ps` command to check the snapshot of current processes.
 
 ```
 osta in /Users/osta/mysh
