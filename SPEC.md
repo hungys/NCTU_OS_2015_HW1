@@ -3,9 +3,9 @@ HW #2. Process & IPC
 
 # Part A: Get Started
 
-In this part, you will learn the basic usage of Unix API for multi-process programming, including `fork()`, `pipe()`, and more.
+In this part, you will learn the basic usage of Unix API for multi-process programming, including `fork()`, `pipe()`, and more. To get started on Unix multi-process programming, we recommend you first go through the tutorial, then compile and execute the example program to know how they work.
 
-**[Important]** If you have been familiar with these topics, just skipping this part and go for attacking Part B directly!
+**[Advice]** If you have been familiar with these topics, just skipping this part and go for attacking Part B directly!
 
 ## Get the example code
 
@@ -14,6 +14,8 @@ You can get all the sample code on [GitHub](https://github.com/hungys/NCTU_OS_20
 ```
 git clone https://github.com/hungys/NCTU_OS_2015_HW2.git
 ```
+
+We may keep updating the tutorials, sample code and HW spec. To check if your copy is up-to-date, execute `git pull` without cloning again.
 
 ## Process Creation
 
@@ -298,6 +300,8 @@ int main(int argc, char **argv) {
 }
 ```
 
+In Part A, we only cover the knowledge you may need in further part of this homework assignment. There are still some topics about Unix IPC not covered in this material; for instance, **message queue**, and **shared memory**.
+
 # Part B: Write your own shell
 
 ## Overview
@@ -320,7 +324,7 @@ You can do this assignment on any UNIX, but you should ensure your program can b
 
 ## Tasks
 
-You don't need to implement your shell according to the following order of tasks. However, we recommand you to read all the specifications first. Noticed that there is **no starter code** provided for Part B.
+You don't need to implement your shell according to the following order of tasks. However, we recommend you to read all the specifications first. Noticed that there is **no starter code** provided for Part B.
 
 **[Useful Information]** It is possible to pass all the tasks with LESS than 400 lines of code.
 
