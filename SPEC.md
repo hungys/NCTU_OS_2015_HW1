@@ -133,6 +133,71 @@ These two system calls create a copy of the file descriptor oldfd.
 - `int dup(int oldfd)`: uses the lowest-numbered unused descriptor for the new descriptor
 - `int dup2(int oldfd, int newfd)`: makes newfd be the copy of oldfd, closing newfd first if necessary
 
+## FIFO
+Named pipe (a.k.a. FIFO) is same as anonymous pipe, but creating a **special file**. This file makes communication between two **unrelated** processes, which have no parent-child relation, become possible. 
+
+```
+int mkfifo(const char *pathname, mode_t mode)
+```
+
+To use FIFO, we use `mkfifo()` system call to create a named pipe file, which is just a special file in the file-system. And then you can use it just as a regular file with `open()`, `read()` and `write()` system calls.
+
+To see more details about `mkfifo()`, type `man mkfifo` on the terminal.
+
+The following example demonstrate how to use FIFO. After compiling the sample code, you can first use `./fifo -c <fifo_name>` to create a FIFO, then execute `./fifo -r <fifo_name>` and `./fifo -w <fifo_name>` on two terminal seperately. Now these two unrelated processes are able to communicate with each other.
+
+### Example
+
+**[Code]** example/fifo.c
+
+```
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main(int argc, char **argv)
+{
+    if (argc != 3)
+    {
+        printf("fifo: usage: %s [-c/-w/-r] <fifo_name>\n", argv[0]);
+        exit(0);
+    }
+
+    if (strcmp(argv[1], "-c") == 0) {
+        if (mkfifo(argv[2], 0666) < 0) {   /* create a fifo */
+            perror("mkfifo failed");
+        } else {
+            printf("mkfifo successed\n");
+            exit(0);
+        }
+    } else if (strcmp(argv[1], "-r") == 0) {
+        int fd;
+        fd = open(argv[2], O_RDONLY);   /* open a special file */
+        char buf[1024];
+        int len;
+        while ((len = read(fd, buf, sizeof(buf))) > 0) {   /* operate as a file */
+            printf("Read %d byte(s): %s", len, buf);
+            memset(buf, 0, sizeof(buf));
+        }
+    } else if (strcmp(argv[1], "-w") == 0) {
+        int fd;
+        fd = open(argv[2], O_WRONLY);
+        char buf[1024];
+        while (1) {
+            memset(buf, 0, sizeof(buf));
+            fgets(buf, sizeof(buf), stdin);
+            write(fd, buf, strlen(buf));
+        }
+    }
+    
+    return 0;
+}
+```
+
 ## Signal Handling
 
 Signals allow one process to communicate the occurance of an event to another process. The number of the signal indicates which event occured. No other information can be communicated via signals. Some common ones include,
@@ -232,8 +297,6 @@ int main(int argc, char **argv) {
     return 0;
 }
 ```
-
-In Part A, we only cover the knowledge you may need in further part of this homework assignment. There are still many topic about Unix IPC not covered in this material; for instance, named pipe - **FIFO**, **message queue**, and **shared memory**.
 
 # Part B: Write your own shell
 
