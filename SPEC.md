@@ -1,4 +1,4 @@
-HW #2. Process & IPC
+HW #1. Process & IPC
 ====================
 
 # Part A: Get Started
@@ -9,10 +9,10 @@ In this part, you will learn the basic usage of Unix API for multi-process progr
 
 ## Get the example code
 
-You can get all the sample code on [GitHub](https://github.com/hungys/NCTU_OS_2015_HW2).
+You can get all the sample code on [GitHub](https://github.com/hungys/NCTU_OS_2015_HW1).
 
 ```
-git clone https://github.com/hungys/NCTU_OS_2015_HW2.git
+git clone https://github.com/hungys/NCTU_OS_2015_HW1.git
 ```
 
 We may keep updating the tutorials, sample code and HW spec. To check if your copy is up-to-date, execute `git pull` without cloning again.
@@ -661,11 +661,11 @@ In this part, you are asked to answer some questions about process and IPC. Some
 	- Put all the files into a directory named `mysh`
 - Part C
 	- A **pdf** file containing all your answers
-	- Name your pdf file as `HW2_<STUDENT ID>.pdf`
-- Put all the files in `HW2_<STUDENT ID>.zip`, then upload it to e-campus.
+	- Name your pdf file as `HW1_<STUDENT ID>.pdf`
+- Put all the files in `HW1_<STUDENT ID>.zip`, then upload it to e-campus.
 
 # Contact Us
 
 If you have any question about this homework, feel free to e-mail me ([hungys@hotmail.com](mailto:hungys@hotmail.com)), or knock the door of EC618.
 
-Don't forget to attach your **name** and **student ID** in the e-mail, and name the subject as `[OS] HW2 Question (<STUDENT ID>)`.
+Don't forget to attach your **name** and **student ID** in the e-mail, and name the subject as `[OS] HW1 Question (<STUDENT ID>)`.
