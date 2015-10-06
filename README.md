@@ -9,6 +9,9 @@ Student are asked to implement a simple shell, called ***mysh***. The detail spe
 
 # Contact Us
 
-If you have any question about this homework, feel free to e-mail me ([hungys@hotmail.com](mailto:hungys@hotmail.com)), or knock the door of EC618.
+If you have any question about this homework, feel free to e-mail the TA, or knock the door of EC618.
+
+- TA: 洪聿昕 (Yu-Hsin Hung)
+- E-mail: [hungys.cs04g@nctu.edu.tw](mailto:hungys.cs04g@nctu.edu.tw)
 
 Don't forget to attach your **name** and **student ID** in the e-mail, and name the subject as `[OS] HW1 Question (<STUDENT ID>)`.
