@@ -3,13 +3,13 @@ HW #1. Process & IPC
 
 # Part A: Get Started
 
-In this part, you will learn the basic usage of Unix API for multi-process programming, including `fork()`, `pipe()`, and more. To get started on Unix multi-process programming, we recommend you first go through the tutorial, then compile and execute the example program to know how they work.
+In this part, you will learn the basic usage of Unix API for multi-process programming, including `fork()`, `pipe()`, and more. To get started on Unix multi-process programming, we recommend you first go through the tutorial (i.e. Part A), then compile and execute the example program to know how they work.
 
 **[Advice]** If you have been familiar with these topics, just skipping this part and go for attacking Part B directly!
 
 ## Get the example code
 
-You can get all the sample code on [GitHub](https://github.com/hungys/NCTU_OS_2015_HW1).
+You can get all the sample code on [GitHub](https://github.com/hungys/NCTU_OS_2015_HW1) by executing
 
 ```
 git clone https://github.com/hungys/NCTU_OS_2015_HW1.git
@@ -25,7 +25,7 @@ pid_t fork(void);
 
 To create a new process we use the `fork()` system call. The fork system call actually clones the calling process, with very few differences. The clone has a different process id (PID) and parent process id (PPID).
 
-The return value of the `fork()` is the only way that the process can tell if it is the parent or the child. The function returns the **PID of the child** to the parent and **0** to the child. After the function call executed, both parent process and child process will continue to run next line of code, and you can use the return value to distinguish them.
+The return value of the `fork()` is the only way that the process can tell if it is the parent or the child. The function returns the **PID of the child** to the parent and **0** to the child. After the function call executed, both parent process and child process will continue to run the next line of code, and you can use the return value to distinguish them.
 
 To see more details about `fork()`, type `man fork` on the terminal.
 
@@ -207,7 +207,7 @@ Signals allow one process to communicate the occurance of an event to another pr
 - **SIGCHLD:** the signal is sent to a process when a child process terminates, is interrupted, or resumes after being interrupted.
 - **SIGCONT:** the signal instructs the operating system to continue (restart) a process previously paused by the SIGSTOP or SIGTSTP signal.
 - **SIGINT:** the signal is sent to a process by its controlling terminal when a user wishes to interrupt the process.
-- **SIGKILL:** the signal is sent to a process to cause it to terminate immediately (`kill`).
+- **SIGKILL:** the signal is sent to a process to cause it to terminate immediately.
 - **SIGTERM:** the signal is sent to a process to request its termination.
 - **SIGTSTP:** the signal is sent to a process by its controlling terminal to request it to stop temporarily.
 - **SIGTTIN and SIGTTOU:** the signals are sent to a process when it attempts to read in or write out respectively from the tty while in the background.
@@ -265,7 +265,7 @@ int main(int argc, char **argv) {
 }
 ```
 
-The program will be terminated after the fourth time you press `Control-C`.
+The sample program will be terminated after the fourth time you press `Control-C`.
 
 ### Useful Functions
 
@@ -273,7 +273,7 @@ The program will be terminated after the fourth time you press `Control-C`.
 int kill(pid_t pid, int sig);
 ```
 
-`kill()` can be used to send signal to a process. If pid is positive, then signal sig is sent to the process with the ID specified by pid. If pid is less than -1, then sig is sent to every process in the process group whose ID is -pid. See more details about it on `man kill`.
+`kill()` can be used to send signal to a process. If pid is positive, then signal sig is sent to the process with the ID specified by pid. If pid is less than -1, then sig is sent to every process in the **process group** whose ID is -pid. See more details about it on `man kill`.
 
 The following example shows a basic implementation to kill specific process or process group.
 
@@ -318,7 +318,7 @@ For the detailed specifications and requirements, please read the following part
 
 ## Enviornment
 
-You can do this assignment on any UNIX, but you should ensure your program can be run for demo on Linux workstation provided by NCTU CSCC (i.e. linux1~6.cs.nctu.edu.tw). If you want to develop and test your program on your own virtual machine, we prefer the latest LTS version of Ubuntu ([Ubuntu 14.04.3 LTS](http://www.ubuntu.com/download/desktop)).
+You can do this assignment on any Unix system, but you should ensure your program can be run for demo on Linux workstation provided by NCTU CSCC (i.e. linux1~6.cs.nctu.edu.tw). If you want to develop and test your program on your own virtual machine, we prefer the latest LTS version of Ubuntu ([Ubuntu 14.04.3 LTS](http://www.ubuntu.com/download/desktop)).
 
 **[Important]** As for the programming language, you must use **C/C++** to implement your shell. Otherwise you will lose **ALL** the points from this part.
 
@@ -326,7 +326,7 @@ You can do this assignment on any UNIX, but you should ensure your program can b
 
 You don't need to implement your shell according to the following order of tasks. However, we recommend you to read all the specifications first. Noticed that there is **no starter code** provided for Part B.
 
-**[Useful Information]** It is possible to pass all the tasks with LESS than 400 lines of code.
+**[Useful Information]** It is possible to pass all the tasks with LESS than 400 lines of code!
 
 ### #1 Shell Prompt
 
@@ -351,11 +351,11 @@ mysh>
 
 ### #2 Command Parser
 
-mysh should accept input from the user one line at a time. Your parser need to recognize program name (or command name), arguments, meta-characters including `|` for pipes, and `&` for background jobs.
+*mysh* should accept input from the user one line at a time. Your parser need to recognize program name (or command name), arguments, meta-characters including `|` for pipes, and `&` for background jobs.
 
-Blank-space characters should be treated as delimiters, but your shell should be insensitive to repeated blank spaces. It should also be insensitive to blank spaces at the beginning or end of the command line.
+*Blank-space characters* should be treated as delimiters, but your shell should be insensitive to repeated blank spaces. It should also be insensitive to blank spaces at the beginning or end of the command line.
 
-Certain characters, known as meta-characters, have special meanings within the context of user input. These characters include `&` and `|`. Your shell can assume that these meta-characters cannot occur inside strings representing programs, arguments, or files. Instead they are reserved for use by the shell.
+Certain characters, known as *meta-characters*, have special meanings within the context of user input. These characters include `&` and `|`. Your shell can assume that these meta-characters cannot occur inside strings representing programs, arguments, or files. Instead they are reserved for use by the shell.
 
 The general form of command supported by mysh can be expressed as:
 
@@ -401,7 +401,7 @@ Goodbye!
 
 ### #4 Program Execution
 
-The execution of a program is specified by a sequence of delimited strings. The first of these is the name of the executable file, and the others are arguments to be passed to the program. If the command is an error or the executable file named by the first string does not exist, mysh should print an error message.
+The execution of a program is specified by a sequence of delimited strings. The first of these is the name of the executable file, and the others are arguments to be passed to the program. If the command is an error or the executable file named by the first string does not exist, *mysh* should print an error message.
 
 Before each program be executed, mysh should print a message `Command executed by pid=<pid> [in background]` to let user know the program is running in which process.
 
@@ -441,7 +441,7 @@ Furthermore, *mysh* should be able to execute any programs from the paths define
 
 ### #5 Shell Pipeline
 
-Several program invocations can be present in a single command line, when separated by the shell meta-character `|`. In this case, the shell should fork all of them, chaining their outputs and inputs using **pipes**. For instance, the command line
+Several program invocations can be present in a single command line, when separated by the shell meta-character `|`. In this case, the shell should fork all of them, chaining their outputs and inputs using **pipes**. For instance, the command
 
 ```
 progA argA1 argA2 | progB argB1
@@ -449,7 +449,7 @@ progA argA1 argA2 | progB argB1
 
 should fork both progA and progB and make the output from progA go to the input of progB. This should be accomplished using a pipe IPC primative.
 
-There is no limitation for the number of programs in a single pipeline.  *mysh* should be insensitive to repeated blank spaces, or even a program followed by a `|` token without any blank space. For example,
+There is no limitation for the number of programs in a single pipeline.  *mysh* should be also insensitive to repeated blank spaces, or even a program followed by a `|` token without any blank space. For example,
 
 ```
 osta in /Users/osta/mysh
@@ -513,7 +513,7 @@ In the next task, you will implement the internal commands `bg` and `fg` to make
 
 ### #7 Job Control
 
-Before doing this task, you may need to slightly modify your program. From now on, you should consider a single command (may be a pipeline) as a **job**. To bring a job back from suspended status, you may need to notify all the processes. Instead of maintaining a job/process table, you can simply associate multiple processes with a common group ID, to form a **process group**.
+Before doing this task, you may need to slightly modify your program. From now on, you should consider a single command (may be a pipeline) as a **job**. To bring a job back from suspended status, you may need to notify all the processes in the same pipeline. Instead of maintaining a job/process table, you can simply associate multiple processes with a common group ID, to form a **process group**.
 
 At most, one terminal can be associated with a process group, and such *foreground* process group is the group within a session that currently has access to the controlling terminal (i.e. stdin).
 
@@ -604,7 +604,7 @@ Good news! You are almost done your tasks. Now let's do something interesting to
 
 Well done! You have finished all the tasks and your shell should now meet for all the requirements for this homework. Don't forget to double check all the requirments and grading policy in case you miss anything.
 
-You are free to add any new feature (e.g. show current branch of git repository in the shell prompt) to your *mysh*, but please make sure you don't break any functions required by this homework.
+You are free to add any cool features (e.g. show current branch of git repository in the shell prompt) to your *mysh*, but please make sure you don't break any functions required by this homework.
 
 # Part C: Short Answer Questions
 
@@ -648,11 +648,11 @@ In this part, you are asked to answer some questions about process and IPC. Some
 - Part C - 20%
 	- Each question counts 5%
 
-**[Hint]** Total scores of Part B are more than 80 points. That is, you don't need to pass all the tasks to get max score. In case you may lose some points due to bugs, try your best to attack all the tasks.
+**[Hint]** Total scores of Part B are **more than 80 points**. That is, you don't need to pass all the tasks to get max score. In case you may lose some points due to bugs, try your best to attack all the tasks.
 
 # Deliverables
 
-**[Important]** Please organize your files correctly before you upload them to e-campus, otherwise you will lose **5 points** for penalty.
+**[Important]** Please organize your files correctly before you upload them to e-campus, otherwise you will lose **10 points** for penalty.
 
 - Part B
 	- A **Makefile**
@@ -666,6 +666,9 @@ In this part, you are asked to answer some questions about process and IPC. Some
 
 # Contact Us
 
-If you have any question about this homework, feel free to e-mail me ([hungys@hotmail.com](mailto:hungys@hotmail.com)), or knock the door of EC618.
+If you have any question about this homework, feel free to e-mail the TA, or knock the door of EC618.
+
+- TA: 洪聿昕 (Yu-Hsin Hung)
+- E-mail: [hungys.cs04g@nctu.edu.tw](mailto:hungys.cs04g@nctu.edu.tw)
 
 Don't forget to attach your **name** and **student ID** in the e-mail, and name the subject as `[OS] HW1 Question (<STUDENT ID>)`.
