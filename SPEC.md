@@ -454,10 +454,13 @@ There is no limitation for the number of programs in a single pipeline.  *mysh* 
 ```
 osta in /Users/osta/mysh
 mysh> pwd | cat
+Command executed by pid=3855
 Command executed by pid=3856
 /Users/osta/mysh
 hungys in /Users/osta/mysh
 mysh> pwd|   cat |cat   # multiple programs and repeated blank spaces
+Command executed by pid=3857
+Command executed by pid=3858
 Command executed by pid=3859
 /Users/osta/mysh
 mysh> 
