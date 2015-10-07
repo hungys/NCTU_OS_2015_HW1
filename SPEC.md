@@ -662,6 +662,7 @@ In this part, you are asked to answer some questions about process and IPC. Some
 	- Source files that compile, by typing `make`, into an executable of name `mysh`
 	- Optionally, a file of name `README` that contains anything you wish to point out to us.
 	- Put all the files into a directory named `mysh`
+	- **No need to write a report**
 - Part C
 	- A **pdf** file containing all your answers
 	- Name your pdf file as `HW1_<STUDENT ID>.pdf`
