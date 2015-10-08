@@ -5,7 +5,7 @@ NCTU OS 2015
 
 This is Homework 1 for Introduction to Operating Systems, Fall 2015. The main purpose of this assignment is to get familiar with the concept of process and IPC mechanisms in Unix.
 
-Student are asked to implement a simple shell, called ***mysh***. The detail spec is in [SPEC.md](https://github.com/hungys/NCTU_OS_2015_HW2/blob/master/SPEC.md).
+Student are asked to implement a simple shell, called ***mysh***. The detail spec is in [SPEC.md](https://github.com/hungys/NCTU_OS_2015_HW2/blob/master/SPEC.md). The commonly asked questions are listed in [QA.md](https://github.com/hungys/NCTU_OS_2015_HW2/blob/master/QA.md).
 
 # Contact Us
 
