@@ -22,7 +22,7 @@ struct command_segment {
 
 struct command {
     struct command_segment *root;   // a linked list
-    int mode;   // BACKGROUND_EXECUTION, FOREGROUND_EXECUTION, or PIPELINE_EXECUTION
+    int mode;   // BACKGROUND_EXECUTION or FOREGROUND_EXECUTION
 };
 
 int mysh_cd(char *path) {
