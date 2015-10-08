@@ -324,7 +324,7 @@ You can do this assignment on any Unix system, but you should ensure your progra
 
 ## Tasks
 
-You don't need to implement your shell according to the following order of tasks. However, we recommend you to read all the specifications first. Noticed that there is **no starter code** provided for Part B.
+You don't need to implement your shell according to the following order of tasks. However, we recommend you to read all the specifications first. We provide a [reference architecture](https://github.com/hungys/NCTU_OS_2015_HW1/blob/master/mysh_ref.c) for student who has no idea about how to get started.
 
 **[Useful Information]** It is possible to pass all the tasks with LESS than 400 lines of code!
 
@@ -355,7 +355,7 @@ mysh>
 
 *Blank-space characters* should be treated as delimiters, but your shell should be insensitive to repeated blank spaces. It should also be insensitive to blank spaces at the beginning or end of the command line.
 
-Certain characters, known as *meta-characters*, have special meanings within the context of user input. These characters include `&` and `|`. Your shell can assume that these meta-characters cannot occur inside strings representing programs, arguments, or files. Instead they are reserved for use by the shell.
+Certain characters, known as *meta-characters*, have special meanings within the context of user input. These characters include `&` and `|`. Your shell can assume that these meta-characters cannot occur inside strings representing programs, arguments, or files. Instead they are reserved for use by the shell. Also, you can suppose all the arguments are separated by blank spaces; that is, you don't need to handle the case with **quotation marks** (i.e. "... ...").
 
 The general form of command supported by mysh can be expressed as:
 
@@ -670,7 +670,7 @@ In this part, you are asked to answer some questions about process and IPC. Some
 
 # Contact Us
 
-If you have any question about this homework, feel free to e-mail the TA, or knock the door of EC618.
+Some commonly asked questions will be listed on [QA.md](https://github.com/hungys/NCTU_OS_2015_HW2/blob/master/QA.md). If you still have any question about this homework, feel free to e-mail the TA, or knock the door of EC618.
 
 - TA: 洪聿昕 (Yu-Hsin Hung)
 - E-mail: [hungys.cs04g@nctu.edu.tw](mailto:hungys.cs04g@nctu.edu.tw)
