@@ -37,6 +37,7 @@ To see more details about `fork()`, type `man fork` on the terminal.
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main(int argc, char **argv) {
     pid_t childpid;
@@ -95,6 +96,7 @@ The following example demonstrate how to create a communication channel between 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main(int argc, char **argv) {
     pid_t childpid;
