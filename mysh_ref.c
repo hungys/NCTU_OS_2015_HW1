@@ -132,7 +132,7 @@ void mysh_print_promt() {
     /* Print "<username> in <current working directory>" */
     
 
-    /* Print ">mysh " */
+    /* Print "mysh> " */
     
 }
 
