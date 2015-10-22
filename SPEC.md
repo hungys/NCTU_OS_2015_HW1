@@ -465,6 +465,7 @@ Command executed by pid=3857
 Command executed by pid=3858
 Command executed by pid=3859
 /Users/osta/mysh
+hungys in /Users/osta/mysh
 mysh> 
 ```
 
