@@ -476,7 +476,7 @@ mysh>
 Through an interaction with the terminal driver, certain combinations of keystrokes will generate signals to your shell instead of appearing within stdin. Your shell should respond appropriately to these signals:
 
 - `Control-C` generates a `SIGINT`. This should not kill your shell. Instead it should cause your shell to kill **ALL** the processes (considering a pipeline) in the current foreground job. If there is no foreground job, it should have no effect.
-- `Control-Z` generates a `SIGSTOP`. This should not cause your shell to be suspended. Instead, the default behavior should cause your shell to suspend the processes in the current foreground job and start to accept next command. If there is no foreground job, it should have no effect.
+- `Control-Z` generates a `SIGTSTP`. This should not cause your shell to be suspended. Instead, the default behavior should cause your shell to suspend the processes in the current foreground job and start to accept next command. If there is no foreground job, it should have no effect.
 
 See the following example,
 
@@ -644,7 +644,7 @@ In this part, you are asked to answer some questions about process and IPC. Some
 		- support unlimited amount of pipes - 5%
 	- Task #6 Signal Handling - 10%
 		- `SIGINT (Control-C)` - 5%
-		- `SIGSTOP (Control-Z)` - 5%
+		- `SIGTSTP (Control-Z)` - 5%
 	- Task #7 Job Control - 15%
 		- `fg` - 5%
 		- `bg` - 5%
