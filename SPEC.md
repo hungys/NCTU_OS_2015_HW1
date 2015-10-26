@@ -383,7 +383,7 @@ Your parser should also support several internal commands. If these commands are
 
 *mysh* should support the following internal commands:
 
-- `exit`: Kill all child processes, print a goodbye message `Goodbye!`, then exit the shell.
+- `exit`: Print a goodbye message `Goodbye!`, then exit the shell.
 - `cd <path>`: Change the current working directory, and mysh should print an error message if the destination is not existed.
 
 There are still three commands *mysh* need to support, including `fg`, `bg` and `kill`. Those will be introduced in detail later. For `cd` and `exit`, please refer the following execution example:
